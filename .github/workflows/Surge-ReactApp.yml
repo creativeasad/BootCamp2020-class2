@@ -24,7 +24,8 @@ jobs:
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: install # will run `yarn install` command
-    - name: install surge
+    - name: install surge on git
       run: npm install --global surge
+
     - name: upload files through surge
       run: surge ./build sasadaliz.surge.sh --token ${{ secrets.SURGE_TOKEN }}
