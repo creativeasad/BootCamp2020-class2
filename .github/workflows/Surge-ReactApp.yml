@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 12
-    - uses: actions/setup-node@2-beta
+      uses: actions/setup-node@v2-beta
       with:
         node-version: 12
     - name: Installing Yarn
