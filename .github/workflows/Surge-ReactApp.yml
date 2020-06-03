@@ -19,5 +19,11 @@ jobs:
         node-version: 12 
     - name: Installing surge
       run: npm install --global surge
+    - name: Install Yarn
+    - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+    - name: Build File
+      run: yarn build
     - name: deploying Surge
       run: surge ./Build sasadaliz.surge.sh --token  ${{ secrets.SURGE_TOKEN }}
