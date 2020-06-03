@@ -1,4 +1,4 @@
-name: Reach App Deployed with Surge
+name: Boot Camp 2020
 
 on:
   push:
@@ -13,16 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 12
+    - name: Installing Node JS 
       uses: actions/setup-node@v2-beta
       with:
-        node-version: 12
-    - name: Installing Yarn
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install # will run `yarn install` command
-    - name: install surge on git
+        node-version: 12 
+    - name: Installing surge
       run: npm install --global surge
-
-    - name: upload files through surge
-      run: surge ./build sasadaliz.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+    - name: deploying Surge
+      run: surge ./ sasadaliz.surge.sh --token  ${{ secrets.SURGE_TOKEN }}
