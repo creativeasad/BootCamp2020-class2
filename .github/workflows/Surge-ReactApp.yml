@@ -19,7 +19,6 @@ jobs:
         node-version: 12 
     - name: Installing surge
       run: npm install --global surge
-    - uses: actions/checkout@v1
     - name: Install Yarn
       uses: borales/actions-yarn@v2.0.0
         with:
